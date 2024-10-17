@@ -1,7 +1,7 @@
 # PoE_App
  PoE app for leveling
 
- **TO DO**
+ **TO DO**<br>
  Write a loop after answer is given so the program can ask the user if there is anything else to help with
  Add notes in certain places (maybe after quest_input): for more info, check...related poe URL
  
