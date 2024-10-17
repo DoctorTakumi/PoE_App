@@ -1,5 +1,5 @@
 # Define quests for Acts 1-10
-quests_act1 = {
+act1 = {
     1: "Enemy at the Gate",
     2: "Mercy Mission",
     3: "Breaking Some Eggs",
@@ -13,7 +13,7 @@ quests_act1 = {
     11: "The Lord's Labyrinth"
 }
 
-quests_act2 = {
+act2 = {
     1: "The Great White Beast",
     2: "Einhar's Hunt",
     3: "Einhar's Menagerie",
@@ -30,7 +30,7 @@ quests_act2 = {
     14: "The Lord's Labyrinth"  
 }
 
-quests_act3 = {
+act3 = {
     1: "Lost in Love",
     2: "Victario's Secrets",
     3: "Sever the Right Hand",
@@ -44,7 +44,7 @@ quests_act3 = {
     11: "The Lord's Labyrinth"
 }
 
-quests_act4 = {
+act4 = {
     1: "Breaking the Seal",
     2: "Niko's Fuel",
     3: "Niko's Mine",
@@ -56,7 +56,7 @@ quests_act4 = {
     9: "The Eternal Nightmare"
 }
 
-quests_act5 = {
+act5 = {
     1: "Return to Oriath",
     2: "The Key to Freedom",
     3: "In Service to Science",
@@ -66,7 +66,7 @@ quests_act5 = {
     7: "The Ravenous God"
 }
 
-quests_act6 = {
+act6 = {
     1: "Fallen from Grace",
     2: "Bestel's Epic",
     3: "The Father of War",
@@ -76,7 +76,7 @@ quests_act6 = {
     7: "The Brine King"
 }
 
-quests_act7 = {
+act7 = {
     1: "The Silver Locket",
     2: "Essence of the Artist",
     3: "No Time like the Present",
@@ -89,7 +89,7 @@ quests_act7 = {
     10: "The Mother of Spiders"  
 }
 
-quests_act8 = {
+act8 = {
     1: "Essence of the Hag",
     2: "Love is Dead",
     3: "The Gemling Legion",
@@ -99,7 +99,7 @@ quests_act8 = {
     7: "Solar Eclipse"
 }
 
-quests_act9 = {
+act9 = {
     1: "The Immortal Syndicate",
     2: "The Storm Blade",
     3: "Fastis Fortuna",
@@ -108,7 +108,7 @@ quests_act9 = {
     6: "Recurring Nightmare"
 }
 
-quests_act10 = {
+act10 = {
     1: "Safe Passage",
     2: "Map to Tsoatha",
     3: "No Love for Old Ghosts",
