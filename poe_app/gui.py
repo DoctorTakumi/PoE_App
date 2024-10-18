@@ -7,18 +7,23 @@ from utils import quests, quest_utils, quest_logic  # importing quest module
 def create_gui():
     root = tk.Tk() # creates the main window for the application
     root.title("PoE Leveling App")  # title written on top of application
+    # root.geometry ("400x300") # posibility to change GUI dimensions
+    root.config(bg="lightblue") # GUI background color
+    
 
     # label and dropdown for act selection
-    tk.Label(root, text="Which act are you in?").grid(row=0, column=0, padx=10, pady=10) # label in GUI that prompts the user to select an act
+    tk.Label(root, text="Which act are you in?", bg= "lightblue", font=("Italic", 10, "bold")).grid(row=0, column=0, padx=10, pady=10) # label in GUI that prompts the user to select an act
     act_var = tk.StringVar()  # variable to hold selected act
     act_dropdown = tk.OptionMenu(root, act_var, *list(range(1, 11)))  # dropdown menu for acts 1 to 10
     act_dropdown.grid(row=0, column=1, padx=10, pady=10)  # places the dropdown in the grid layout at the specified row and column
+    act_dropdown.config (bg = "salmon", fg = "white")  ## act button properties
 
     # label for quest selection (updated later based on act)
     quest_var = tk.StringVar()  # variable to hold selected quest
-    tk.Label(root, text="Choose a quest: ").grid(row=1, column=0, padx=10, pady=10) # creates a label prompting the user to select a quest
+    tk.Label(root, text="Choose a quest:", bg= "lightblue", font=("Italic", 10, "bold")).grid(row=1, column=0, padx=10, pady=10) # creates a label prompting the user to select a quest
     quest_dropdown = tk.OptionMenu(root, quest_var, "")  # creates an empty dropdown for quest selection
     quest_dropdown.grid(row=1, column=1, padx=10, pady=10)
+    quest_dropdown.config (bg = "salmon", fg = "black")  ## quest button properties
 
     # updates the quest dropdown based on the selected act
     def update_quests(*args): # defines a function that updates the quest dropdown based on the act selected by the user
@@ -67,7 +72,8 @@ def create_gui():
         # Display the result to the user in a pop-up window
         messagebox.showinfo("Selected Quest", response) ## name of pop-up shit
 
-    submit_button = tk.Button(root, text="Submit", command=submit)
+    # submit button properties
+    submit_button = tk.Button(root, text="Submit", bg = "violet", fg = "white", command=submit)
     submit_button.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
 
     # starts the main loop of the application, which waits for user interaction and keeps the window open
