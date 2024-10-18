@@ -1,6 +1,7 @@
 from utils import quests
 
 # Logic for selected quests
+# This is for adding more acts, quests and their rewards
 def handle_act_1_quests(quest_input):
     response = ""
     if quest_input == 4:

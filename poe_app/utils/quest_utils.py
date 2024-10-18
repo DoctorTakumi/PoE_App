@@ -1,6 +1,7 @@
 from utils import quests
 
 # Function to get quest input based on the act and quest string
+# To add acts and match them with dictionary from quest module
 def get_quest_input(act_input, quest):
     if act_input == 1:
         # Get the index for Act 1 quests
