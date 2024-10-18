@@ -24,8 +24,21 @@ def handle_act_2_quests(quest_input):
             response += " Reward for the quest is unlocked Menagerie."
         elif quest_input == 3:
             response += " Reward for the quest is whatever you managed to beastcraft."
+    elif quest_input == 5:
+        response += f"You have to do {quests.act2[quest_input]}.\n"
+        response += "Quest is reworked and now grants 1 skill point."
+    elif quest_input in [9, 10, 11]:
+        response += f"You have to do {quests.act2[quest_input]}.\n"
+        if quest_input == 9:
+            response += "Save Alira to get 15% to all Elemental Resistances."
+        elif quest_input == 10:
+            response += "Save Kraitlyn to get 8% MS."
+        elif quest_input == 11:
+            response += "Save Oak to get +40 to maximum life."
     elif quest_input == 14:
         response += "If this is your first character, you have to do it for the ascendancy!\n"
+        response += "Otherwise, you can proceed!"
     else:
         response += f"You have to do {quests.act2[quest_input]}."
     return response
+
