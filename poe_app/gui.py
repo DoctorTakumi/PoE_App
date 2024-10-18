@@ -1,24 +1,24 @@
 import tkinter as tk
 from tkinter import ttk, messagebox  # importing messagebox (.showinfo, .showerror)
-from utils import quests  # importing quest module
+from utils import quests, quest_utils  # importing quest module
 
-# Function to get quest input based on the act and quest string
-def get_quest_input(act_input, quest):
-    if act_input == 1:
-        # Get the index for Act 1 quests
-        try:
-            quest_index = list(quests.act1.values()).index(quest) + 1  # +1 to match the dictionary keys
-            return quest_index
-        except ValueError:
-            return None  # Quest not found
-    elif act_input == 2:
-        # Get the index for Act 2 quests
-        try:
-            quest_index = list(quests.act2.values()).index(quest) + 1
-            return quest_index
-        except ValueError:
-            return None  # Quest not found
-    return None  # Act not implemented
+# # Function to get quest input based on the act and quest string
+# def get_quest_input(act_input, quest):
+#     if act_input == 1:
+#         # Get the index for Act 1 quests
+#         try:
+#             quest_index = list(quests.act1.values()).index(quest) + 1  # +1 to match the dictionary keys
+#             return quest_index
+#         except ValueError:
+#             return None  # Quest not found
+#     elif act_input == 2:
+#         # Get the index for Act 2 quests
+#         try:
+#             quest_index = list(quests.act2.values()).index(quest) + 1
+#             return quest_index
+#         except ValueError:
+#             return None  # Quest not found
+#     return None  # Act not implemented
 
 
 # Creating the main window
@@ -65,7 +65,7 @@ def create_gui():
             return
 
         act_input = int(act)  # convert the act to integer
-        quest_input = get_quest_input(act_input, quest)
+        quest_input = quest_utils.get_quest_input(act_input, quest) ##  get_quest_input function call with act_input and quest as arguments
 
         if quest_input is None:
             messagebox.showerror("Error", "Invalid quest selection!")
