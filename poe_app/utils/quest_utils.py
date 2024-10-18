@@ -1,4 +1,4 @@
-import quests
+from utils import quests
 
 # Function to get quest input based on the act and quest string
 def get_quest_input(act_input, quest):
