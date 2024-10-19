@@ -23,4 +23,10 @@ def get_quest_input(act_input, quest):
             return quest_index
         except ValueError:
             return None
+    elif act_input == 4:
+        try:
+            quest_index = list(quests.act4.values()).index(quest) + 1
+            return quest_index
+        except:
+            return None
     return None  # Act not implemented

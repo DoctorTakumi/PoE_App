@@ -66,3 +66,16 @@ def handle_act_3_quests(quest_input):
         response += f"You have to do {quests.act3[quest_input]}."
     return response
         
+def handle_act_4_quests(quest_input):
+    response = ""
+    if quest_input in [2, 3, 4]:
+        response += f"{quests.act4[quest_input]} is an optional quest, you can go on!\n"
+        if quest_input == 2:
+            response += "Quest reward is access to the Azurite Mine.\n"
+        if quest_input == 3:
+            response += "There is no quest reward.\n"
+        if quest_input == 4:
+            response += "There is no quest reward.\n"
+    else:
+        response += f"You have to do {quests.act4[quest_input]}."
+    return response
