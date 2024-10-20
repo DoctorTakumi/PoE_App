@@ -79,3 +79,12 @@ def handle_act_4_quests(quest_input):
     else:
         response += f"You have to do {quests.act4[quest_input]}."
     return response
+
+def handle_act_5_quests(quest_input):
+    response = ""
+    if quest_input == 5:
+        response += f"{quests.act5[quest_input]} is an optional quest, you can go on!\n"
+        response += "Quest reward is a weapon of your choice.\n"
+    else:
+        response += f"You have to do {quests.act5[quest_input]}."
+    return response
