@@ -16,14 +16,14 @@ def create_gui():
     act_var = tk.StringVar()  # variable to hold selected act
     act_dropdown = tk.OptionMenu(root, act_var, *list(range(1, 11)))  # dropdown menu for acts 1 to 10
     act_dropdown.grid(row=0, column=1, padx=10, pady=10)  # places the dropdown in the grid layout at the specified row and column
-    act_dropdown.config (bg = "salmon", fg = "white")  ## act button properties
+    act_dropdown.config (bg = "lightgrey", fg = "black")  ## act button properties
 
     # label for quest selection (updated later based on act)
     quest_var = tk.StringVar()  # variable to hold selected quest
     tk.Label(root, text="Choose a quest:", bg= "lightblue", font=("Italic", 10, "bold")).grid(row=1, column=0, padx=10, pady=10) # creates a label prompting the user to select a quest
     quest_dropdown = tk.OptionMenu(root, quest_var, "")  # creates an empty dropdown for quest selection
     quest_dropdown.grid(row=1, column=1, padx=10, pady=10)
-    quest_dropdown.config (bg = "salmon", fg = "black")  ## quest button properties
+    quest_dropdown.config (bg = "lightgrey", fg = "black")  ## quest button properties
 
     # updates the quest dropdown based on the selected act
     def update_quests(*args): # defines a function that updates the quest dropdown based on the act selected by the user
@@ -48,6 +48,10 @@ def create_gui():
     # Trace act_var so that the quest list updates when act is selected
     # whenever its value changes (when a user selects an act), the update_quests function will be called automatically
     act_var.trace("w", update_quests)
+    
+    # adding a label to display the response (initially empty)!
+    response_label = tk.Label(root, text="", bg = "lightblue", fg="black", font=("Italic", 10, "bold"))  # label properties
+    response_label.grid(row=5, column=0, columnspan=2, padx=10, pady=10)
 
     # Submit button functionality
     # defines the function that runs when the "Submit" button is clicked
@@ -85,7 +89,10 @@ def create_gui():
             response = quest_logic.handle_act_5_quests(quest_input)
             
         # Display the result to the user in a pop-up window
-        messagebox.showinfo("Selected Quest", response) ## name of pop-up shit
+        ## messagebox.showinfo("Selected Quest", response) ## name of pop-up shit
+        
+        # updating the label with the response instead of a pop-up!!
+        response_label.config(text=response)
 
     # submit button properties
     submit_button = tk.Button(root, text="Submit", bg = "violet", fg = "white", command=submit)
