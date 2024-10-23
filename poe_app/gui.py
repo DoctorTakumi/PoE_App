@@ -1,4 +1,5 @@
 import tkinter as tk
+# from tkinter import ttk  # Import ttk for the border line
 from tkinter import messagebox
 from utils import quests, quest_utils, quest_logic  # importing quest module
 
@@ -8,22 +9,22 @@ def create_gui():
     root = tk.Tk() # creates the main window for the application
     root.title("PoE Leveling App")  # title written on top of application
     # root.geometry ("400x300") # posibility to change GUI dimensions
-    root.config(bg="lightblue") # GUI background color
+    root.config(bg="lightgrey") # GUI background color
     
 
     # label and dropdown for act selection
-    tk.Label(root, text="Which act are you in?", bg= "lightblue", font=("Italic", 10, "bold")).grid(row=0, column=0, padx=10, pady=10) # label in GUI that prompts the user to select an act
+    tk.Label(root, text="Which act are you in?", bg= "lightgrey", font=("Italic", 10, "bold")).grid(row=0, column=0, padx=10, pady=10) # label in GUI that prompts the user to select an act
     act_var = tk.StringVar()  # variable to hold selected act
     act_dropdown = tk.OptionMenu(root, act_var, *list(range(1, 11)))  # dropdown menu for acts 1 to 10
     act_dropdown.grid(row=0, column=1, padx=10, pady=10)  # places the dropdown in the grid layout at the specified row and column
-    act_dropdown.config (bg = "lightgrey", fg = "black")  ## act button properties
+    act_dropdown.config (bg = "#800020", fg = "white")  ## act button properties
 
     # label for quest selection (updated later based on act)
     quest_var = tk.StringVar()  # variable to hold selected quest
-    tk.Label(root, text="Choose a quest:", bg= "lightblue", font=("Italic", 10, "bold")).grid(row=1, column=0, padx=10, pady=10) # creates a label prompting the user to select a quest
+    tk.Label(root, text="Choose a quest:", bg= "lightgrey", font=("Italic", 10, "bold")).grid(row=1, column=0, padx=10, pady=10) # creates a label prompting the user to select a quest
     quest_dropdown = tk.OptionMenu(root, quest_var, "")  # creates an empty dropdown for quest selection
     quest_dropdown.grid(row=1, column=1, padx=10, pady=10)
-    quest_dropdown.config (bg = "lightgrey", fg = "black")  ## quest button properties
+    quest_dropdown.config (bg = "#800020", fg = "white")  ## quest button properties
 
     # updates the quest dropdown based on the selected act
     def update_quests(*args): # defines a function that updates the quest dropdown based on the act selected by the user
@@ -65,7 +66,7 @@ def create_gui():
     act_var.trace("w", update_quests)
     
     # adding a label to display the response (initially empty)!
-    response_label = tk.Label(root, text="", bg = "lightblue", fg="black", font=("Italic", 10, "bold"))  # label properties
+    response_label = tk.Label(root, text="", bg = "lightgrey", fg="black", font=("Italic", 10, "bold"))  # label properties
     response_label.grid(row=5, column=0, columnspan=2, padx=10, pady=10)
 
     # Submit button functionality
@@ -120,9 +121,9 @@ def create_gui():
         response_label.config(text=response)
 
     # submit button properties
-    submit_button = tk.Button(root, text="Submit", bg = "violet", fg = "white", command=submit)
+    submit_button = tk.Button(root, text="Submit", bg = "#B58D3D", fg = "white", command=submit)
     submit_button.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
-
+    
     # starts the main loop of the application, which waits for user interaction and keeps the window open
     root.mainloop()
 
