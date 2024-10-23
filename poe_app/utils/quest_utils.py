@@ -35,4 +35,16 @@ def get_quest_input(act_input, quest):
             return quest_index
         except:
             return None
+    elif act_input == 6:
+        try:
+            quest_index = list(quests.act6.values()).index(quest) + 1
+            return quest_index
+        except:
+            return None
+    elif act_input == 7:
+        try:
+            quest_index = list(quests.act7.values()).index(quest) + 1
+            return quest_index
+        except:
+            return None
     return None  # Act not implemented

@@ -44,6 +44,12 @@ def create_gui():
         elif act_input == 5:
             for key, value in quests.act5.items(): # populating Act 5 quests
                 quest_dropdown["menu"].add_command(label=value, command=tk._setit(quest_var, value))
+        elif act_input == 6:
+            for key, value in quests.act6.items(): # populating Act 6 quests
+                quest_dropdown["menu"].add_command(label=value, command=tk._setit(quest_var, value))
+        elif act_input == 7:
+            for key, value in quests.act7.items(): # populating Act 7 quests
+                quest_dropdown["menu"].add_command(label=value, command=tk._setit(quest_var, value))
 
     # Trace act_var so that the quest list updates when act is selected
     # whenever its value changes (when a user selects an act), the update_quests function will be called automatically
@@ -87,6 +93,10 @@ def create_gui():
             response = quest_logic.handle_act_4_quests(quest_input)
         elif act_input == 5:
             response = quest_logic.handle_act_5_quests(quest_input)
+        elif act_input == 6:
+            response = quest_logic.handle_act_6_quests(quest_input)
+        elif act_input == 7:
+            response = quest_logic.handle_act_7_quests(quest_input)
             
         # Display the result to the user in a pop-up window
         ## messagebox.showinfo("Selected Quest", response) ## name of pop-up shit

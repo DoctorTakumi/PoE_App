@@ -21,7 +21,7 @@ def handle_act_2_quests(quest_input):
         if quest_input == 1:
             response += "Quest reward is Flask or Belt of your choice."
         elif quest_input == 2:
-            response += "Quest reward is unlocked Menagerie."
+            response += "Quest reward is unlocked Menagerie and Einhar unlocked in your Hideout."
         elif quest_input == 3:
             response += "Quest reward is whatever you managed to beastcraft."
     elif quest_input == 5:
@@ -71,7 +71,7 @@ def handle_act_4_quests(quest_input):
     if quest_input in [2, 3, 4]:
         response += f"{quests.act4[quest_input]} is an optional quest, you can go on!\n"
         if quest_input == 2:
-            response += "Quest reward is access to the Azurite Mine.\n"
+            response += "Quest reward is access to the Azurite Mine and Niko unlocked in your Hideout.\n"
         if quest_input == 3:
             response += "There is no quest reward.\n"
         if quest_input == 4:
@@ -88,3 +88,31 @@ def handle_act_5_quests(quest_input):
     else:
         response += f"You have to do {quests.act5[quest_input]}."
     return response
+
+def handle_act_6_quests(quest_input):
+    response = ""
+    if quest_input in [1, 2]:
+        response += f"{quests.act6[quest_input]} is an optional quest, you can go on!\n"
+        if quest_input == 1:
+            response += "However, if this is your first character, you'll need it to unlock Lilly in your Hideout!\n"
+            response += "Otherwise, quest reward is Book of Regrets and vast choice of Skill/Support gems"
+        if quest_input == 2:
+            response += "Quest reward is Amulet or Belt of your choice."
+    else:
+        response += f"You have to do {quests.act6[quest_input]}."
+    return response
+
+def handle_act_7_quests(quest_input):
+    response = ""
+    if quest_input in [1, 3, 6]:
+        response += f"{quests.act7[quest_input]} is an optional quest, you can go on!\n"
+        if quest_input == 1:
+            response += "Quest reward is Utility Flask of your choice."
+        if quest_input == 3:
+            response += "Quest reward is Alva unlocked in your Hideout.\n"
+        if quest_input == 6:
+            response += "Quest reward is Amulet of your choice."
+    else:
+        response += f"You have to do {quests.act7[quest_input]}."
+    return response
+    
