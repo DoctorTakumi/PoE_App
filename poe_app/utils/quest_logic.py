@@ -34,7 +34,7 @@ def handle_act_2_quests(quest_input):
             response += "Save Alira to get 15% to all Elemental Resistances.\n"
             response += "Save Kraitlyn to get 8% MS.\n"
             response += "Save Oak to get +40 to maximum life."
-        if quest_input == 9:
+        elif quest_input == 9:
             response += "Save Alira to get 15% to all Elemental Resistances."
         elif quest_input == 10:
             response += "Save Kraitlyn to get 8% MS."
@@ -53,7 +53,7 @@ def handle_act_3_quests(quest_input):
         response += f"{quests.act3[quest_input]} is an optional quest, you can go on!\n"
         if quest_input == 7:
             response += "Quest reward is Coral/Gold/Paua Ring."
-        if quest_input == 8:
+        elif quest_input == 8:
             response += "Quest reward is vast choice of Support gems.\n"
             response += "You also gain access to all the Support gems."
     elif quest_input == 3:
@@ -72,9 +72,9 @@ def handle_act_4_quests(quest_input):
         response += f"{quests.act4[quest_input]} is an optional quest, you can go on!\n"
         if quest_input == 2:
             response += "Quest reward is access to the Azurite Mine and Niko unlocked in your Hideout.\n"
-        if quest_input == 3:
+        elif quest_input == 3:
             response += "There is no quest reward.\n"
-        if quest_input == 4:
+        elif quest_input == 4:
             response += "There is no quest reward.\n"
     else:
         response += f"You have to do {quests.act4[quest_input]}."
@@ -96,7 +96,7 @@ def handle_act_6_quests(quest_input):
         if quest_input == 1:
             response += "However, if this is your first character, you'll need it to unlock Lilly in your Hideout!\n"
             response += "Otherwise, quest reward is Book of Regrets and vast choice of Skill/Support gems"
-        if quest_input == 2:
+        elif quest_input == 2:
             response += "Quest reward is Amulet or Belt of your choice."
     else:
         response += f"You have to do {quests.act6[quest_input]}."
@@ -108,11 +108,43 @@ def handle_act_7_quests(quest_input):
         response += f"{quests.act7[quest_input]} is an optional quest, you can go on!\n"
         if quest_input == 1:
             response += "Quest reward is Utility Flask of your choice."
-        if quest_input == 3:
+        elif quest_input == 3:
             response += "Quest reward is Alva unlocked in your Hideout.\n"
-        if quest_input == 6:
+        elif quest_input == 6:
             response += "Quest reward is Amulet of your choice."
     else:
         response += f"You have to do {quests.act7[quest_input]}."
     return response
-    
+
+def handle_act_8_quests(quest_input):
+    response = ""
+    if quest_input == 5:
+        response += f"{quests.act8[quest_input]} is an optional quest, you can go on!\n"
+        response += "Quest reward is Jewel of your choice."
+    else:
+        response += f"You have to do {quests.act8[quest_input]}."
+    return response
+
+def handle_act_9_quests(quest_input):
+    response = ""
+    if quest_input in [1, 3]:
+        response += f"{quests.act9[quest_input]} is an optional quest, you can go on!\n"
+        if quest_input == 1:
+            response += "Quest reward is Jun unlocked in your Hideout.\n"
+        elif quest_input == 3:
+            response += "Quest reward is Book of Regrets."
+    else:
+        response += f"You have to do {quests.act9[quest_input]}."
+    return response
+
+def handle_act_10_quests(quest_input):
+    response = ""
+    if quest_input in [2, 3]:
+        response += f"{quests.act10[quest_input]} is an optional quest, you can go on!\n"
+        if quest_input == 2:
+            response += "Quest reward is Belt of your choice."
+        elif quest_input == 3:
+            response += "Quest reward is Book of Regrets."
+    else:
+        response += f"You have to do {quests.act10[quest_input]}."
+    return response

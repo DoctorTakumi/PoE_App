@@ -47,4 +47,22 @@ def get_quest_input(act_input, quest):
             return quest_index
         except:
             return None
+    elif act_input == 8:
+        try:
+            quest_index = list(quests.act8.values()).index(quest) + 1
+            return quest_index
+        except:
+            return None
+    elif act_input == 9:
+        try:
+            quest_index = list(quests.act9.values()).index(quest) + 1
+            return quest_index
+        except:
+            return None
+    elif act_input == 10:
+        try:
+            quest_index = list(quests.act10.values()).index(quest) + 1
+            return quest_index
+        except:
+            return None
     return None  # Act not implemented
